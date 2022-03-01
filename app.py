@@ -46,6 +46,11 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError("Brugernavn Taget")
 
+class LoginForm(FlaskForm):
+    username = StringField("Brugernavn", validators=[DataRequired, Length(min = 2, max = 20)], render_kw={"placeholder": "Brugernavn"})
+    password = PasswordField("Adgangskode", validators=[DataRequired()], render_kw={"placeholder": "Adgangskode"})
+    submit = SubmitField("Log ind")
+
 
 @app.route('/')
 def home():
