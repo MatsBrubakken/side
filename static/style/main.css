@@ -162,6 +162,7 @@ nav li a:hover {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: 1fr;
   grid-gap: 5px;
   grid-row-gap: 5px;
 }
@@ -200,6 +201,8 @@ nav li a:hover {
 }
 .event_picture {
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 /*----------------------------------------- EVENT PAGES CREATION-------------------------------------*/
 .opret_event_title {

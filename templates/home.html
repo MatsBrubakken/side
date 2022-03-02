@@ -3,11 +3,19 @@
   {% for post in posts %}
   <figure class="text-over">
     <a href="{{ url_for('event', event_id=post.id) }}">
+      {% if post.thumbnail %}
       <img
         class="thumbnail-pics"
         src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}"
         alt=""
       />
+      {% else %}
+      <img
+        class="thumbnail-pics"
+        src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}"
+        alt=""
+      />
+      {% endif %}
     </a>
     <a href="{{ url_for('event', event_id=post.id) }}"
       ><figcaption>{{ post.title }}</figcaption></a
