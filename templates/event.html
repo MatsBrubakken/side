@@ -3,6 +3,9 @@ current_user %}
 <form action="{{ url_for('delete_post', event_id=post.id) }}" method="POST">
   <input type="submit" value="Slet Event" class="delete-event" />
 </form>
+<form action="{{ url_for('update_event', event_id=post.id) }}" method="POST">
+  <input type="submit" value="Opdater Event" class="update-event" />
+</form>
 {% endif %} {% if post.event_picture %}
 <img
   class="event_picture"

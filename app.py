@@ -4,7 +4,7 @@ from email.policy import default
 from tokenize import String
 from flask import Flask, render_template, url_for, redirect, abort
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, DateField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
 from flask_wtf.file import FileField, FileAllowed
 from flask_sqlalchemy  import SQLAlchemy
@@ -44,6 +44,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     date_posted =  db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
+    event_desc = db.Column(db.String(255))
     thumbnail = db.Column(db.String(20))
     event_picture = db.Column(db.String(20))
     user_id= db.Column(db.Integer,db.ForeignKey("user.id"),nullable=False)
@@ -54,7 +55,7 @@ class Post(db.Model):
 
 class RegistrationForm(FlaskForm):
     username=StringField("Brugernavn", validators=[DataRequired(), Length(min=2,max=20)], render_kw={"placeholder": "Brugernavn"})
-    password=PasswordField("Adgangskode", validators=[DataRequired()],render_kw={"placeholder": "Adgangskode"})
+    password=PasswordField("Adgangskode",render_kw={"placeholder": "Adgangskode"})
     confirm_password=PasswordField("Bekræft Adgangskode", validators=[DataRequired(),EqualTo("password")],render_kw={"placeholder": "Bekræft Adgangskode"})
     submit = SubmitField("Opret Bruger")
 
@@ -71,6 +72,7 @@ class LoginForm(FlaskForm):
 
 class EventForm(FlaskForm):
     title = StringField("Overskrift", validators=[DataRequired()], render_kw={"placeholder": "Overskrift"})
+    event_desc = StringField("Forside Beskrivelse", validators=[DataRequired()], render_kw={"placeholder": "Forside Beskrivelse"})
     content = TextAreaField("Indhold", validators=[DataRequired()], render_kw={"placeholder": "Indhold"})
     thumbnail = FileField("Thumbnail billede", validators=[FileAllowed(["jpg", "png"])])
     event_picture = FileField("Event billede", validators=[FileAllowed(["jpg", "png"])])
@@ -145,7 +147,7 @@ def opret_event():
             thumbnail_pic = save_picture(form.thumbnail.data)
         if form.event_picture.data:
             event_pic = save_picture(form.event_picture.data)
-        post = Post(title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic)
+        post = Post(title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic, event_desc=form.event_desc.data)
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('home'))
@@ -173,6 +175,20 @@ def delete_post(event_id):
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('home'))
+
+
+@app.route("/event/<int:event_id>/update", methods=["POST", "GET"])
+@login_required
+def update_event(event_id):
+    post = Post.query.get_or_404(event_id)
+    form = EventForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.event_desc = form.event_desc.data
+        post.content = form.content.data
+        db.session.commit()
+        return redirect(url_for('event', event_id=post.id))
+    return render_template('opret_event.html', form=form)
 
 
 if __name__ == "__main__":

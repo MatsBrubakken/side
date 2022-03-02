@@ -18,6 +18,7 @@ body {
   font-weight: bold;
   color: black;
   font-size: 1.2em;
+  margin-left: 1rem;
 }
 
 .navbar nav {
@@ -161,12 +162,12 @@ nav li a:hover {
   padding: 2em;
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 5px;
   grid-row-gap: 5px;
 }
-
+/*
 .thumbnail-pics {
   width: 100%;
   height: 100%;
@@ -185,6 +186,39 @@ nav li a:hover {
   color: white;
   margin-bottom: 35%;
   font-size: x-large;
+}
+.divimg {
+}
+*/
+.card {
+  border: 2px solid black;
+  justify-content: space-between;
+  height: 25rem;
+  overflow: hidden;
+}
+.card__pic {
+  padding: 1rem;
+}
+.thumbnail-pics {
+  object-fit: cover;
+  height: 12rem;
+  width: 100%;
+}
+.card__title {
+  font-weight: bold;
+  display: flex;
+  place-content: space-between;
+  padding: 1.5rem;
+  margin-top: -2.2rem;
+}
+
+.card__desc {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  height: 6rem;
 }
 
 /*----------------------------------------- EVENT PAGES -------------------------------------*/

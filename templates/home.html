@@ -2,24 +2,37 @@
 <div class="wrapper">
   {% for post in posts %}
   <figure class="text-over">
+    <div class="card">
     <a href="{{ url_for('event', event_id=post.id) }}">
       {% if post.thumbnail %}
+      <div class="card__body">
+        <div class="card__pic">
       <img
         class="thumbnail-pics"
         src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}"
         alt=""
       />
+    </div>
+    <div class="card__title">
+      <h2 class="event_title">{{post.title}}</h2>
+      <h2 class="event_dato">12/03/22</h2>
+    </div>
+      <p class="card__desc">{{post.event_desc}}</p>
+    </div>
+    </div>
       {% else %}
+      <div class="card__body">
       <img
         class="thumbnail-pics"
         src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}"
         alt=""
       />
+      <h2 class="card__title">{{post.title}}</h2>
+      <p class="card__desc">{{post.content}}</p>
+    </div>
+  </div>
       {% endif %}
     </a>
-    <a href="{{ url_for('event', event_id=post.id) }}"
-      ><figcaption>{{ post.title }}</figcaption></a
-    >
   </figure>
   {% endfor %}
 </div>
