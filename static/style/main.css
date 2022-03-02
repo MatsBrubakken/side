@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+
+html {
+  font-family: "Fredoka", sans-serif;
+}
 body {
-  background: #F2F2F2;
+  background: #f2f2f2;
   margin: 0;
 }
 
@@ -52,6 +57,7 @@ section .subhead {
 
 .hero {
   text-align: left;
+  background: lightblue;
 }
 
 nav.menu-btn {
@@ -64,7 +70,7 @@ nav {
   width: 66%;
   right: 0;
   top: 0;
-  background: #20272E;
+  background: #20272e;
   height: 100vh;
   padding: 1em;
 }
@@ -85,7 +91,7 @@ nav li a:hover {
 
 .mobile-menu-exit {
   float: right;
-  margin: .5em;
+  margin: 0.5em;
   cursor: pointer;
 }
 
@@ -98,18 +104,18 @@ nav li a:hover {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 180px auto;
-        grid-template-columns: 180px auto;
+    grid-template-columns: 180px auto;
     -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset;
   }
   .navbar nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     background: none;
     height: auto;
     width: 100%;
@@ -124,7 +130,7 @@ nav li a:hover {
   .navbar nav a {
     color: black;
     font-size: 1em;
-    padding: .1em 1em;
+    padding: 0.1em 1em;
   }
   .navbar nav ul.link-nav {
     margin: 0;
@@ -136,7 +142,7 @@ nav li a:hover {
     color: red;
     font-weight: bold;
     border-radius: 5em;
-    margin-top: -.2em;
+    margin-top: -0.2em;
     border: 3px solid red;
   }
   .navbar nav li.go-premium-cta a:hover {
@@ -145,3 +151,82 @@ nav li a:hover {
   }
 }
 /*# sourceMappingURL=main.css.map */
+/*----------------------------------------- HOME PAGE -------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  padding: 2em;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.thumbnail-pics {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+.text-over {
+  position: relative;
+}
+.text-over figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  margin-bottom: 35%;
+  font-size: x-large;
+}
+
+/*----------------------------------------- EVENT PAGES -------------------------------------*/
+
+.event-title {
+  text-align: center;
+}
+.event-content {
+  margin-top: 1.2em;
+  text-align: center;
+}
+.delete-event {
+  margin: 1.2em;
+}
+.event_picture {
+  align-items: center;
+}
+/*----------------------------------------- EVENT PAGES CREATION-------------------------------------*/
+.opret_event_title {
+  padding: 10px;
+  margin: 1.2em;
+}
+.opret_event_content {
+  padding: 10px;
+  margin: 1.2em;
+}
+.thumbnail_label {
+  padding: 10px;
+  margin: 1.2em;
+}
+.opret_event_thumbnail {
+  padding: 10px;
+  margin: 1.2em;
+}
+.event_picture_label {
+  padding: 10px;
+  margin: 1.2em;
+}
+.opret_event_picture {
+  padding: 10px;
+  margin: 1.2em;
+}
+.opret_event_submit {
+  padding: 10px;
+  margin: 1.2em;
+}

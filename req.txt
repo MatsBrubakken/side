@@ -9,6 +9,7 @@ greenlet==1.1.2
 itsdangerous==2.1.0
 Jinja2==3.0.3
 MarkupSafe==2.1.0
+Pillow==9.0.1
 pycparser==2.21
 PyMySQL==1.0.2
 SQLAlchemy==1.4.31

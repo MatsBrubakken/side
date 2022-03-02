@@ -1,8 +1,18 @@
 {%extends "layout.html"%} {%block content%}
-<section class="hero">
-    <div class="content">
-        <a href="#" class="subhead">Dette er en test overskrift</a>
-        <p>Contents</p>
-    </div>
-</section>
+<div class="wrapper">
+  {% for post in posts %}
+  <figure class="text-over">
+    <a href="{{ url_for('event', event_id=post.id) }}">
+      <img
+        class="thumbnail-pics"
+        src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}"
+        alt=""
+      />
+    </a>
+    <a href="{{ url_for('event', event_id=post.id) }}"
+      ><figcaption>{{ post.title }}</figcaption></a
+    >
+  </figure>
+  {% endfor %}
+</div>
 {%endblock%}
