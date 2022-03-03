@@ -1,16 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
-
 html {
   font-family: "Fredoka", sans-serif;
 }
+
 body {
   background: #f2f2f2;
   margin: 0;
 }
 
+.block-top {
+  width: 100%;
+  height: 3.5em;
+}
+
 .navbar {
   background: white;
   padding: 1em;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar .homeknap {
@@ -30,6 +37,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   place-content: space-between;
+  width: 95%;
 }
 
 .mobile-menu {
@@ -151,22 +159,41 @@ nav li a:hover {
     color: white;
   }
 }
-/*# sourceMappingURL=main.css.map */
-/*----------------------------------------- HOME PAGE -------------------------------------*/
 
+@media only screen and (min-width: 1200px) {
+  .event-all {
+    max-height: 70vh;
+    gap: 0;
+    max-width: 75em;
+    padding-left: 100%;
+    padding-right: 100%;
+  }
+  .event-all .event-picture {
+    max-width: 30em;
+  }
+  .event-all .event-name {
+    max-width: 36.5em;
+  }
+}
+/*----------------------------------------- HOME PAGE -------------------------------------*/
 * {
   margin: 0;
   padding: 0;
 }
+
 .wrapper {
   padding: 2em;
+  display: -ms-grid;
   display: grid;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-columns: (minmax(330px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 5px;
   grid-row-gap: 5px;
 }
+
 /*
 .thumbnail-pics {
   width: 100%;
@@ -192,20 +219,28 @@ nav li a:hover {
 */
 .card {
   border: 2px solid black;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 25rem;
   overflow: hidden;
 }
+
 .card__pic {
   padding: 1rem;
 }
+
 .thumbnail-pics {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 12rem;
   width: 100%;
 }
+
 .card__title {
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   place-content: space-between;
   padding: 1.5rem;
@@ -222,48 +257,184 @@ nav li a:hover {
 }
 
 /*----------------------------------------- EVENT PAGES -------------------------------------*/
+.knapper-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 4em;
+}
 
-.event-title {
-  text-align: center;
+.knapper-user .delete-event,
+.knapper-user .update-event {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  text-shadow: none;
+  margin: 0 1em 1em;
 }
-.event-content {
-  margin-top: 1.2em;
-  text-align: center;
+
+.knapper-user .delete-event:hover,
+.knapper-user .update-event:hover {
+  background: #004369;
 }
-.delete-event {
-  margin: 1.2em;
-}
-.event_picture {
-  align-items: center;
-  height: 100%;
+
+.event-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #00009e;
   width: 100%;
 }
+
+.event-all .event-picture {
+  padding: 3em 3em 0;
+}
+
+.event-all img {
+  width: 100%;
+}
+
+.event-all .event-name {
+  font-size: 1.7rem;
+  margin: 1em;
+  color: white;
+  text-transform: uppercase;
+}
+
+.event-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.event-content p {
+  margin: 1em 1.5em;
+  text-align: left;
+}
+
+.billet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 3em;
+  border-bottom: 1px solid black;
+}
+
+.billet .billetkob {
+  padding: 1em 1.5em;
+  background-color: red;
+  text-transform: uppercase;
+  border-left: 1px solid black;
+}
+
+.billet .billetkob svg {
+  float: right;
+  width: 1.6em;
+  margin-left: 0.5em;
+  -webkit-transform: translateY(-0.1em);
+          transform: translateY(-0.1em);
+}
+
+.billet p {
+  margin: 1em 1.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  .event-all {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .event-all .event-picture {
+    padding-bottom: 3em;
+    width: 40%;
+  }
+  .event-all .event-picture img {
+    float: right;
+    width: 100%;
+  }
+  .event-all .event-name {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 7em;
+  }
+}
+
 /*----------------------------------------- EVENT PAGES CREATION-------------------------------------*/
 .opret_event_title {
   padding: 10px;
   margin: 1.2em;
 }
+
 .opret_event_content {
   padding: 10px;
   margin: 1.2em;
 }
+
 .thumbnail_label {
   padding: 10px;
   margin: 1.2em;
 }
+
 .opret_event_thumbnail {
   padding: 10px;
   margin: 1.2em;
 }
+
 .event_picture_label {
   padding: 10px;
   margin: 1.2em;
 }
+
 .opret_event_picture {
   padding: 10px;
   margin: 1.2em;
 }
+
 .opret_event_submit {
   padding: 10px;
   margin: 1.2em;
 }
+/*# sourceMappingURL=main.css.map */
