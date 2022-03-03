@@ -47,10 +47,6 @@ ul {
   padding: 0;
 }
 
-section {
-  padding: 5em 2em;
-}
-
 section .subhead {
   font-size: 1.4em;
   font-weight: bold;
@@ -194,7 +190,7 @@ nav li a:hover {
   border: 2px solid black;
   justify-content: space-between;
   height: 25rem;
-  overflow: hidden;
+  overflow: scroll;
 }
 .card__pic {
   padding: 1rem;
@@ -204,21 +200,35 @@ nav li a:hover {
   height: 12rem;
   width: 100%;
 }
-.card__title {
+.card__genre {
   font-weight: bold;
+  font-size: 3vh;
   display: flex;
   place-content: space-between;
-  padding: 1.5rem;
-  margin-top: -2.2rem;
 }
 
 .card__desc {
-  padding: 0 1rem;
   margin-bottom: 1rem;
-  border: 2px solid black;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  height: 6rem;
+  font-size: auto;
+  border: 2px solid black;
+  max-height: 10rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.card_genre_date {
+  display: flex;
+  margin: -1rem 1.5rem 0 1.5rem;
+  place-content: space-between;
+}
+.card_date {
+}
+.event_date {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.event_genre {
+  font-size: 16px;
 }
 
 /*----------------------------------------- EVENT PAGES -------------------------------------*/
@@ -266,4 +276,46 @@ nav li a:hover {
 .opret_event_submit {
   padding: 10px;
   margin: 1.2em;
+}
+.opret_event_date {
+  margin: 1.2em;
+}
+
+/*-------------TEST------------*/
+
+.event_container_top {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: blueviolet;
+  flex-direction: row-reverse;
+}
+.event_right_container {
+  background-color: brown;
+  flex: 1;
+}
+.event_right_container_pic {
+}
+.event_picture {
+  object-fit: cover;
+  width: 100%;
+}
+.event_left_container {
+  text-align: center;
+  background-color: chocolate;
+  flex: 1;
+}
+.event-title {
+  width: fit-content;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .event_container_top {
+    flex-direction: column;
+  }
+}
+.event_container_bottom {
+  background-color: cornflowerblue;
+  width: 100%;
 }

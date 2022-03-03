@@ -13,11 +13,15 @@
         alt=""
       />
     </div>
-    <div class="card__title">
-      <h2 class="event_title">{{post.title}}</h2>
-      <h2 class="event_dato">12/03/22</h2>
+    <div class="card_genre_date">
+    <div class="card_genre">
+      <h2 class="event_genre">{{post.genre}}</h2>
     </div>
-      <p class="card__desc">{{post.event_desc}}</p>
+    <div class="card_date">
+      <h2 class="event_date">{{post.event_date.strftime('%d-%m-%Y')}}</h2>
+    </div>
+  </div>
+      <p class="card__desc">{{post.title}}</p>
     </div>
     </div>
       {% else %}

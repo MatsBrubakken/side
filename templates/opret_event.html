@@ -1,9 +1,10 @@
 {% extends 'layout.html' %}{% block content %}
 <form action="" method="POST" enctype="multipart/form-data" class="opret-event">
   {{form.hidden_tag()}} <br />
-  {{form.title(class="opret_event_title")}}<br />
-  {{form.event_desc(class="opret_event_content")}} <br />
+  {{form.genre(class="opret_event_title")}}<br />
+  {{form.title(class="opret_event_content")}} <br />
   {{form.content(class="opret_event_content")}} <br />
+  {{form.event_date(class="opret_event_date")}} <br />
   {{form.thumbnail.label(class="thumbnail_label")}} <br />
   {{form.thumbnail(class="opret_event_thumbnail")}} <br />
   {{form.event_picture.label(class="event_picture_label")}} <br />

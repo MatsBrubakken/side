@@ -41,10 +41,11 @@ class User(db.Model, UserMixin):
 
 class Post(db.Model):
     id = db.Column(db.Integer,primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    genre = db.Column(db.String(100), nullable=False)
     date_posted =  db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    event_date = db.Column(db.Date)
     content = db.Column(db.Text, nullable=False)
-    event_desc = db.Column(db.String(255))
+    title = db.Column(db.String(255))
     thumbnail = db.Column(db.String(20))
     event_picture = db.Column(db.String(20))
     user_id= db.Column(db.Integer,db.ForeignKey("user.id"),nullable=False)
@@ -71,8 +72,9 @@ class LoginForm(FlaskForm):
 
 
 class EventForm(FlaskForm):
+    genre = StringField("Genre", validators=[DataRequired()], render_kw={"placeholder": "Genre"})
+    event_date = DateField("Dato")
     title = StringField("Overskrift", validators=[DataRequired()], render_kw={"placeholder": "Overskrift"})
-    event_desc = StringField("Forside Beskrivelse", validators=[DataRequired()], render_kw={"placeholder": "Forside Beskrivelse"})
     content = TextAreaField("Indhold", validators=[DataRequired()], render_kw={"placeholder": "Indhold"})
     thumbnail = FileField("Thumbnail billede", validators=[FileAllowed(["jpg", "png"])])
     event_picture = FileField("Event billede", validators=[FileAllowed(["jpg", "png"])])
@@ -147,7 +149,7 @@ def opret_event():
             thumbnail_pic = save_picture(form.thumbnail.data)
         if form.event_picture.data:
             event_pic = save_picture(form.event_picture.data)
-        post = Post(title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic, event_desc=form.event_desc.data)
+        post = Post(event_date=form.event_date.data,title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic, genre=form.genre.data)
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('home'))
@@ -184,7 +186,7 @@ def update_event(event_id):
     form = EventForm()
     if form.validate_on_submit():
         post.title = form.title.data
-        post.event_desc = form.event_desc.data
+        post.genre = form.genre.data
         post.content = form.content.data
         db.session.commit()
         return redirect(url_for('event', event_id=post.id))
