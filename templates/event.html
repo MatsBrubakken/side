@@ -1,30 +1,54 @@
 {% extends "layout.html" %} {% block content %} {% if post.author ==
 current_user %}
-<form action="{{ url_for('delete_post', event_id=post.id) }}" method="POST">
-  <input type="submit" value="Slet Event" class="delete-event" />
-</form>
-<form action="{{ url_for('update_event', event_id=post.id) }}" method="POST">
-  <input type="submit" value="Opdater Event" class="update-event" />
-</form>
+<div class="knapper-user">
+  <form action="{{ url_for('delete_post', event_id=post.id) }}" method="POST">
+    <input type="submit" value="Slet Event" class="delete-event" />
+  </form>
+  <form action="{{ url_for('update_event', event_id=post.id) }}" method="POST">
+    <input type="submit" value="Opdater Event" class="update-event" />
+  </form>
+</div>
 {% endif %}
-<section class="event_container_top">
-  <div class="event_right_container">
-    {% if post.event_picture %}
-    <div class="event_right_container_pic">
-      <img
-        class="event_picture"
-        src="{{ url_for('static', filename='pictures/' + post.event_picture) }}"
-        alt=""
-      />
-    </div>
-    {% endif %}
+
+<div class="event-all">
+  {% if post.event_picture %}
+  <div class="event-picture">
+    <img
+      class="picture"
+      src="{{ url_for('static', filename='pictures/' + post.event_picture) }}"
+      alt=""
+    />
   </div>
-  <div class="event_left_container">
+  {%else %}
+  <div class="event-picture">
+    <img
+      src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}"
+      alt=""
+    />
+  </div>
+  {% endif %}
+  <div class="event-name">
     <h2 class="event-title">{{ post.title }}</h2>
   </div>
-</section>
-<section class="event_container_bottom">
-  <p class="event-content">{{ post.content }}</p>
-</section>
+</div>
+<div class="billet">
+  <p>Pris billet</p>
+  <div class="billetkob">
+    <a href="#">Køb billet</a>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    >
+      <path
+        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+      />
+    </svg>
+  </div>
+</div>
+<div class="event-content">
+  <p class="event-beskrivelse">{{ post.content }}</p>
+  <p class="dato">tid og sted</p>
+</div>
 
 {% endblock %}

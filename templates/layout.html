@@ -1,66 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
     {%block style%}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='style/main.css') }}"
-    />
-    {%endblock style%}
-  </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/main.css') }}" /> {%endblock style%}
+</head>
 
-  <body>
+<body>
+
     <div class="navbar">
-      <div class="container">
-        <a href="{{ url_for('home') }}" class="homeknap">Home</a>
-        <img
-          class="mobile-menu"
-          id="mobile-cta"
-          alt="menu"
-          src="{{ url_for('static',filename='images/menu.svg') }}"
-        />
-        <nav>
-          <img
-            id="mobile-exit"
-            class="mobile-menu-exit"
-            src="{{ url_for('static',filename='images/exit.svg') }}"
-            alt=""
-          />
-          <ul class="link-nav">
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="{{ url_for('omos')}}">Om os</a></li>
-          </ul>
-          {% if current_user.is_authenticated %}
-          <ul class="login-nav">
-            <li class="go-premium-cta">
-              <a href="{{ url_for('opret_event')}}">Opret Event</a>
-            </li>
-            <li><a href="{{ url_for('home')}}">Profil</a></li>
-            <li><a href="{{ url_for('logout')}}">Log ud</a></li>
-          </ul>
-          {% else %} {% endif %}
-        </nav>
-      </div>
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="homeknap">Home</a>
+            <img class="mobile-menu" id="mobile-cta" alt="menu" src="{{ url_for('static',filename='images/menu.svg') }}" />
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="{{ url_for('static',filename='images/exit.svg') }}" alt="" />
+                <ul class="link-nav">
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="{{ url_for('omos')}}">Om os</a></li>
+                </ul>
+                {% if current_user.is_authenticated %}
+                <ul class="login-nav">
+                    <li class="go-premium-cta">
+                        <a href="{{ url_for('opret_event')}}">Opret Event</a>
+                    </li>
+                    <li><a href="{{ url_for('home')}}">Profil</a></li>
+                    <li><a href="{{ url_for('logout')}}">Log ud</a></li>
+                </ul>
+                {% else %} {% endif %}
+            </nav>
+        </div>
     </div>
-
+    <div class="block-top"></div>
     <script>
-      const mobileBtn = document.getElementById("mobile-cta");
-      nav = document.querySelector("nav");
-      mobileBtnExit = document.getElementById("mobile-exit");
+        const mobileBtn = document.getElementById("mobile-cta");
+        nav = document.querySelector("nav");
+        mobileBtnExit = document.getElementById("mobile-exit");
 
-      mobileBtn.addEventListener("click", () => {
-        nav.classList.add("menu-btn");
-      });
+        mobileBtn.addEventListener("click", () => {
+            nav.classList.add("menu-btn");
+        });
 
-      mobileBtnExit.addEventListener("click", () => {
-        nav.classList.remove("menu-btn");
-      });
+        mobileBtnExit.addEventListener("click", () => {
+            nav.classList.remove("menu-btn");
+        });
     </script>
     {%block content%} {%endblock%}
-  </body>
+</body>
+
 </html>
