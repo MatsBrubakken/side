@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block content %} {% if post.author == current_user %}
+<form action="{{ url_for('delete_post', event_id=post.id) }}" method="POST">
+    <input type="submit" value="Slet Event" class="delete-event" />
+</form>
+<form action="{{ url_for('update_event', event_id=post.id) }}" method="POST">
+    <input type="submit" value="Opdater Event" class="update-event" />
+</form>
+{% endif %}
+<section class="event_container_top">
+    <div class="event_right_container">
+        {% if post.event_picture %}
+        <div class="event_right_container_pic">
+            <img class="event_picture" src="{{ url_for('static', filename='pictures/' + post.event_picture) }}" alt="" />
+        </div>
+        {% endif %}
+    </div>
+    <div class="event_left_container">
+        <h2 class="event-title">{{ post.title }}</h2>
+    </div>
+</section>
+<section class="event_container_bottom">
+    <p class="event-content">{{ post.content }}</p>
+</section>
+<div class="knap">
+    <a href="">TEST</a>
+</div>
+
+{% endblock %}

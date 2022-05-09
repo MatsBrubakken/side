@@ -1,0 +1,16 @@
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
+
+    .wrapper {
+        background-color: blue;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .venstre_side {
+        grid-column-start: 1;
+    }
+
+    .opret_event_title {}

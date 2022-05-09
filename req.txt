@@ -1,0 +1,17 @@
+cffi==1.15.0
+click==8.0.4
+cryptography==36.0.1
+Flask==2.0.3
+Flask-Login==0.5.0
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.0.0
+greenlet==1.1.2
+itsdangerous==2.1.0
+Jinja2==3.0.3
+MarkupSafe==2.1.0
+Pillow==9.0.1
+pycparser==2.21
+PyMySQL==1.0.2
+SQLAlchemy==1.4.31
+Werkzeug==2.0.3
+WTForms==3.0.1

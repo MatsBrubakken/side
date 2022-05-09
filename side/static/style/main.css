@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #372C2E;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 120px;
+    padding-left: 5rem;
+    border-bottom: 2px solid white;
+    margin: 0 3em;
+}
+
+.nav-list .list-item {
+    list-style: none;
+    display: inline-block;
+    padding: 20px 20px;
+}
+
+.nav-list {
+    padding-right: 15rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #DE9E48;
+}
+
+.navbar a:hover {
+    color: #FED136;
+}
+
+.logo {
+    height: fit-content;
+    width: 15em;
+}
+
+.cirkler {
+    border-width: 0px;
+    position: absolute;
+    left: -150px;
+    top: -150px;
+    width: 0px;
+    height: 0px;
+    z-index: -2;
+}
+
+.cirkel_1 {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 642px;
+    height: 642px;
+    display: flex;
+}
+
+.cirkel_1 img {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 642px;
+    height: 642px;
+}
+
+.cirkel_2 {
+    border-width: 0px;
+    position: absolute;
+    left: 987px;
+    top: 368px;
+    width: 642px;
+    height: 642px;
+    display: flex;
+}
+
+.cirkel_2 img {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 642px;
+    height: 642px;
+}
+
+.cirkel_3 {
+    border-width: 0px;
+    position: absolute;
+    left: 353px;
+    top: 849px;
+    width: 642px;
+    height: 642px;
+    display: flex;
+}
+
+.cirkel_3 img {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 642px;
+    height: 642px;
+}

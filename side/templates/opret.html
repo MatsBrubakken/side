@@ -1,0 +1,7 @@
+{%extends "layout.html"%} {%block content%}
+<form action="" method="post">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+        {{form.username}} {{form.password}} {{form.confirm_password}} {{form.submit}}
+</form>
+{%endblock%}

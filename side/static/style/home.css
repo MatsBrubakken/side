@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
+
+body {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.wrapper {
+    padding: 1em;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(283px, 33%));
+    grid-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    height: 25rem;
+    padding: 2em;
+}
+
+.card_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card__pic {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.thumbnail-pics {
+    min-height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__genre {
+    font-weight: bold;
+    font-size: 3vh;
+    display: flex;
+    place-content: space-between;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #DE9E48;
+}
+
+.card__title {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #DE9E48;
+    list-style: none;
+}
+
+.event_date {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #DE9E48;
+    font-size: 16px;
+}
+
+.card__desc {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #372C2E;
+    background-color: #D89947;
+    border-radius: 17px;
+    width: 140px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.card__body {
+    max-height: 400px;
+}
