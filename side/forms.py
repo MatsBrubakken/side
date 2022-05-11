@@ -1,4 +1,4 @@
-from os import link
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, DateField
 from flask_wtf.file import FileField, FileAllowed
