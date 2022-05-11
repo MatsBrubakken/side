@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect, abort
+from flask import render_template, url_for, redirect, abort, request
 from side import app, db
 from flask_login import login_user, login_required, current_user, logout_user
 from side.forms import RegistrationForm, EventForm, LoginForm
@@ -15,8 +15,9 @@ from PIL import Image
 @app.route('/')
 def home():
     """Viser hovedsiden med alle posts fra DB"""
+    page = request.args.get('page', 1, type=int)
     # Gemmer alle posts fra database i rækkefølgen de blev postet i posts variabel
-    posts = Post.query.order_by(Post.date_posted.desc())
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(per_page=6,page=page)
     # Sender posts variablen ind i HTML filen home.html, sådan at den kan bruges der.
     return render_template("home.html",title="Hjem", posts=posts)
 
@@ -26,7 +27,7 @@ def home():
 def opret():
     """Opretter en bruger og gemmer i databasen"""
     form = RegistrationForm()
-    # Tjekker om RegFormen kommer igennem validatorne der er sat og kører det er efterfølger IF
+    # Tjekker om RegFormen kommer igennem validatorne der er sat og kører det er efterfølg er IF
     # hvis den validerer
     if form.validate_on_submit():
         # user variablen sætter info fra formen i de forskellige tabeller i database
@@ -123,7 +124,7 @@ def opret_event():
         if form.event_picture.data:
             event_pic = save_picture(form.event_picture.data)
         # post variablen gemmer alle informationer fra formen
-        post = Post(event_date=form.event_date.data,title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic, link=form.link.data)
+        post = Post(event_date=form.event_date.data,title=form.title.data, content=form.content.data, author=current_user, thumbnail=thumbnail_pic, event_picture=event_pic, link=form.link.data, pris=form.pris.data)
         # tilføjer post info til DB. 
         db.session.add(post)
         # Gemmer infoen i databasen

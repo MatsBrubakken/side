@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/home.css') }}" />
 
 <div class="wrapper">
-    {% for post in posts %}
+    {% for post in posts.items %}
     <figure class="text-over">
         <div class="card">
             <a href="{{ url_for('event', event_id=post.id) }}">
@@ -41,4 +41,11 @@
     </figure>
     {% endfor %}
     </div>
-    {%endblock%}
+</div>
+<div class="side_tal">
+    {% for page in posts.iter_pages() %} {% if page %} {% if page != posts.page %}
+    <a href="{{ url_for('home', page=page) }}"><button>{{page}}</button></a> {% else %}
+    <strong>{{ page }}</strong> {% endif %} {% else %}
+    <span>...</span> {% endif %} {% endfor %}
+</div>
+{%endblock%}
