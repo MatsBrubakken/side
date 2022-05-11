@@ -35,9 +35,10 @@ body {
 
 .cirkel_brun {
     border-radius: 50%;
-    height: 50vh;
-    width: 50vh;
-    left: 10%;
+    height: 55vh;
+    width: 55vh;
+    top: 10vh;
+    left: 25vh;
     position: relative;
     background: #563727;
     -webkit-animation: grow 2s 1;
@@ -49,11 +50,25 @@ body {
     text-align: center;
 }
 
-.event_title {
-    position: absolute;
-    left: 44%;
-    top: 1em;
-    z-index: 1;
+.info-shit {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-end;
+}
+
+.info-shit p {
+    color: #DE9E48;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.info-shit h2 {
+    text-align: center;
+    color: #DE9E48;
+    font-weight: 600;
+    margin-left: 4em;
+    margin-top: 2em;
 }
 
 @supports (shape-outside: circle(50%)) {
@@ -69,19 +84,20 @@ body {
     }
     .cirkel_brun::before {
         float: left;
-        shape-outside: polygon(1px 13px, 91.97% -2px, 91.78% 19.4%, 20% 20%, 10% 28.2%, 5% 34.4%, 0px 50%, 5% 65.6%, 10% 71.8%, 20% 80%, 40% 90%, 60% 96%, 100% 100%, 0px 100%);
+        shape-outside: polygon(-1px -1px, 91.97% -2px, 51.65% 4.67%, 20% 20%, 10% 28.2%, 5% 34.4%, 0px 50%, 5% 65.6%, 10% 71.8%, 20% 80%, 40% 90%, 60% 96%, 100% 100%, 0px 100%);
     }
-    .cirkel_content::before {
-        float: right;
-        shape-outside: polygon(100% 0px, 0px 0px, 0.54% 10.02%, -2.87% 19.37%, 80% 20%, 90% 28.2%, 95% 34.4%, 100% 50%, 95% 65.6%, 90% 71.8%, 80% 80%, 60% 90%, 40% 96%, 0px 100%, 100% 100%);
-    }
+}
+
+.cirkel_content::before {
+    float: right;
+    shape-outside: polygon(100% 0px, 0px 0px, 31.33% 1.84%, 54.18% 7.14%, 80% 20%, 90% 28.2%, 95% 34.4%, 100% 50%, 95% 65.6%, 90% 71.8%, 80% 80%, 60% 90%, 40% 96%, 2px 100.94%, 100% 100%);
 }
 
 .cirkel_orange {
     border-width: 0px;
     position: absolute;
-    left: 100vh;
-    top: 15vh;
+    left: 90vh;
+    top: 20vh;
     width: 60vh;
     height: 60vh;
     display: flex;
@@ -100,8 +116,8 @@ body {
 .cirkel_gul {
     border-width: 0px;
     position: absolute;
-    left: 80vh;
-    top: 70vh;
+    left: 85vh;
+    top: 75vh;
     width: 150px;
     height: 150px;
     display: flex;

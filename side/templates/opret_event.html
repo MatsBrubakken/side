@@ -1,30 +1,28 @@
 {% extends 'layout.html' %}{% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/opret.css') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <div class="wrapper">
     <h1 class="title">Opret Begivenhed</h1>
     <form action="" method="POST" enctype="multipart/form-data" class="opret-event">
         {{form.hidden_tag()}}
-        <div class="venstre_side"> 
+        <div class="venstre_side">
             <p>Overskrift:</p>
             {{form.title(class="inputter")}}
             <p>Dato:</p>
             {{form.event_date(class="inputter")}}
             <p>Beskrivelse:</p>
-            {{form.content(class="inputtercont")}} 
+            {{form.content(class="inputtercont")}}
         </div>
         <div class="hojre_side">
             <p>Your Ticket Link:</p>
             {{form.link(class="inputter")}}
             <p>Pris:</p>
             {{form.pris(class="inputter")}}
-            <p>Forside Billede:</p>
-            <div class="thumbnail">{{form.thumbnail(class="billedeinp")}}</div>
-            <p>Begivenhed Billede</p>
-            <div class="event_picture">{{form.event_picture(class="billedeinp")}}</div>
-            {{form.submit(class="opret_event_submit")}}</div>
+            <label class="thumbnail" id="topthumb">Forside Billede{{form.thumbnail(class="billedeinp")}}</label>
+            <label class="thumbnail">Begivenhed Billede{{form.event_picture(class="billedeinp")}}</label> {{form.submit(class="opret_event_submit")}}
+        </div>
     </form>
 </div>
 {% endblock content %}

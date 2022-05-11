@@ -3,6 +3,7 @@ from side import app, db
 from flask_login import login_user, login_required, current_user, logout_user
 from side.forms import RegistrationForm, EventForm, LoginForm
 from side.models import User, Post
+from sqlalchemy import asc
 import secrets
 import os
 from PIL import Image
@@ -17,7 +18,7 @@ def home():
     """Viser hovedsiden med alle posts fra DB"""
     page = request.args.get('page', 1, type=int)
     # Gemmer alle posts fra database i rækkefølgen de blev postet i posts variabel
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(per_page=6,page=page)
+    posts = Post.query.order_by(Post.event_date.asc()).paginate(per_page=6,page=page)
     # Sender posts variablen ind i HTML filen home.html, sådan at den kan bruges der.
     return render_template("home.html",title="Hjem", posts=posts)
 
@@ -134,13 +135,18 @@ def opret_event():
 
 
 
-@app.route("/omos")
-def omos():
-    return render_template("omos.html")
+@app.route("/kontakt")
+def kontakt():
+    return render_template("kontakt.html")
 
 @app.route("/tilkunstneren")
 def tilkunstneren():
     return render_template("tilkunstneren.html")
+
+@app.route("/galleri")
+@app.route("/omos")
+def omos():
+    return render_template("tomside.html")
 
 @app.route("/event/<int:event_id>")
 def event(event_id):

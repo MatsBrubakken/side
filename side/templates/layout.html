@@ -14,11 +14,11 @@
     <nav class="navbar">
         <a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static',filename='images/logo.svg') }}" alt=""></a>
         <ul class="nav-list">
-            <li class="list-item"><a href="/home">Hjem</a></li>
-            <li class="list-item"><a href="#">Galleri</a></li>
-            <li class="list-item"><a href="/tilkunstneren">Til Kunstneren</a></li>
-            <li class="list-item"><a href="/omos">Om Os</a></li>
-            <li class="list-item"><a href="#">Kontakt</a></li>
+            <li class="list-item"><a href="{{ url_for('home')}}">Hjem</a></li>
+            <li class="list-item"><a href="{{ url_for('omos')}}">Galleri</a></li>
+            <li class="list-item"><a href="{{ url_for('tilkunstneren')}}">Til Kunstneren</a></li>
+            <li class="list-item"><a href="{{ url_for('omos')}}">Om Os</a></li>
+            <li class="list-item"><a href="{{ url_for('kontakt')}}">Kontakt</a></li>
         </ul>
     </nav>
     <div class="cirkler">

@@ -9,26 +9,28 @@
 </form>
 {% endif %}
 <section class="event_container_top">
-    {% if post.event_picture %}
+</section>
+{% if post.event_picture %}
+<div class="cirkler-event">
     <div class="cirkel_orange">
-
         <img class="event_picture" src="{{ url_for('static', filename='pictures/' + post.event_picture) }}" alt="" />
-        <a href="#"><img class="logo" src="{{ url_for('static',filename='images/u8.svg') }}" alt=""></a>
+        <img class="logo" src="{{ url_for('static',filename='images/u8.svg') }}" alt="">
     </div>
     {% endif %}
-</section>
 
 
 
-<div class="cirkel_brun">
-    <h2 class="event_title">{{ post.title }}</h2>
-    <p class="cirkel_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid consectetur accusamus dolorem quidem facere nemo atque provident adipisci unde aliquam saepe quod, praesentium natus delectus quibusdam sit odio. Distinctio, sint impedit voluptatum
-        delectus cupiditate aspernatur et tempora commodi ab quos excepturi nisi accusantium atque sapiente nostrum quibusdam laborum. Fuga, a.</p>
+    <div class="info-shit">
+        <h2 class="event_title">{{ post.title }}</h2>
+        <div class="cirkel_brun">
+
+            <p class="cirkel_content">{{ post.content }}</p>
+        </div>
+    </div>
+
+    <div class="cirkel_gul">
+        <a href="{{ ''.join([post.link]) }}"><img class="logo" src="{{ url_for('static',filename='images/u9.svg') }}" alt=""></a>
+        <a href="{{ ''.join([post.link]) }}">KØB</a>
+    </div>
 </div>
-
-<div class="cirkel_gul">
-    <a href="{{ ''.join(['http://', post.link]) }}"><img class="logo" src="{{ url_for('static',filename='images/u9.svg') }}" alt=""></a>
-    <a href="{{ ''.join(['http://', post.link]) }}">KØB</a>
-</div>
-
 {% endblock %}

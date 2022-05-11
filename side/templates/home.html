@@ -1,50 +1,32 @@
 {%extends "layout.html"%} {%block content%}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/home.css') }}" />
-
 <div class="wrapper">
     {% for post in posts.items %}
-    <figure class="text-over">
+    <a href="{{ url_for('event', event_id=post.id) }}">
         <div class="card">
-            <a href="{{ url_for('event', event_id=post.id) }}">
-      {% if post.thumbnail %}
-      <div class="card__body">
-        
-        <div class="card__pic">
-      <img
-        class="thumbnail-pics"
-        src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}"
-        alt=""
-      />
-      <h1>{{post.title}}</h1>
-    </div>
-    <div class="card_content">
-      <h2 class="card__title">{{post.title}}</h2>
-      <h2 class="event_date">{{post.event_date.strftime('%d-%m-%Y')}}</h2>
 
-      <p class="card__desc">LÆS MERE</p>
-  </div>
-      {% else %}
-      <div class="card_content">
-      <div class="card__body">
-      <img
-        class="thumbnail-pics"
-        src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}"
-        alt=""
-      />
-      <h2 class="card__title">{{post.title}}</h2>
-      <p class="card__desc">{{post.content}}</p>
-    </div>
-  </div>
-  </div>
-      {% endif %}
+            <div class="card__pic">
+                <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}" alt="" />
+            </div>
+
+            <h2 class="card__title">{{post.title}}</h2>
+            <h2 class="event_date">{{post.event_date.strftime('%d-%m-%Y')}}</h2>
+            <div class="lorteknap">
+                <p class="card__desc">LÆS MERE</p>
+            </div>
+
+
+        </div>
     </a>
-    </figure>
+
+
     {% endfor %}
-    </div>
 </div>
 <div class="side_tal">
     {% for page in posts.iter_pages() %} {% if page %} {% if page != posts.page %}
-    <a href="{{ url_for('home', page=page) }}"><button>{{page}}</button></a> {% else %}
+    <a href="{{ url_for('home', page=page) }}" tabindex="-1">
+        <p>{{page}}</p>
+    </a> {% else %}
     <strong>{{ page }}</strong> {% endif %} {% else %}
     <span>...</span> {% endif %} {% endfor %}
 </div>

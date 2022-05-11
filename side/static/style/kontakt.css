@@ -11,9 +11,9 @@ body {
     background: rgba(55, 44, 46, 0.85);
     border: 1px solid #797979;
     border-radius: 17px;
-    padding: 2em;
+    padding: 1em;
     margin-top: 40px;
-    height: 21em;
+    height: 25em;
     backdrop-filter: blur(5px);
 }
 
@@ -23,7 +23,6 @@ body {
     height: 24em;
     padding: 0 15em;
     padding-top: 5em;
-    padding-bottom: 3em;
 }
 
 .inventar {
@@ -33,9 +32,9 @@ body {
     background: rgba(55, 44, 46, 0.85);
     border: 1px solid #797979;
     border-radius: 17px;
-    padding: 2em;
+    padding: 1em;
     margin-top: 40px;
-    height: 21em;
+    height: 25em;
     backdrop-filter: blur(5px);
 }
 
@@ -46,8 +45,8 @@ body {
 h5 {
     color: #F2F2F2;
     font-size: 23px;
-    padding: 1em;
     font-weight: 300;
+    margin: 5px;
 }
 
 .inventar-liste {
@@ -60,6 +59,21 @@ h5 {
 h2 {
     margin-bottom: 10px;
     font-size: 27px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.google {
+    height: 100%;
+    width: 100%;
+}
+
+.txt-sidste {
+    margin-bottom: 10vh;
+}
+
+.txt-sk {
+    color: #DE9E48;
     font-weight: 300;
     text-align: center;
 }
