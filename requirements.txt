@@ -16,3 +16,4 @@ PyMySQL==1.0.2
 SQLAlchemy==1.4.31
 Werkzeug==2.0.3
 WTForms==3.0.1
+psycopg2-binary
