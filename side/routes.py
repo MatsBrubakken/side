@@ -11,8 +11,8 @@ from PIL import Image
 
 
 # Route til homesiden
-@app.route("/home", methods=['GET', 'POST'])
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/home")
+@app.route('/')
 def home():
     """Viser hovedsiden med alle posts fra DB"""
     # Gemmer alle posts fra database i rækkefølgen de blev postet i posts variabel
