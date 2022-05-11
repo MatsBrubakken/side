@@ -28,7 +28,7 @@ class Post(db.Model):
     pris = db.Column(db.String(100), nullable=False)
     date_posted =  db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     event_date = db.Column(db.Date)
-    content = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text(), nullable=False)
     title = db.Column(db.String(255))
     thumbnail = db.Column(db.String(20))
     event_picture = db.Column(db.String(20))
