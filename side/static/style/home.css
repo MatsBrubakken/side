@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
 body {
     margin-left: 3em;
     margin-right: 3em;
 }
 
 .wrapper {
-    padding: 1em;
+    justify-content: center;
+    padding: 2em;
+    padding-top: 0;
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(283px, 33%));
-    grid-gap: 5px;
-    grid-row-gap: 5px;
+    grid-template-columns: 330px 330px 330px;
+    grid-gap: 1.5em;
+    grid-row-gap: 1em;
 }
 
 .card {
@@ -19,6 +20,10 @@ body {
     justify-content: center;
     height: 25rem;
     padding: 2em;
+}
+
+.card:hover {
+    padding: 1em;
 }
 
 .card_content {
@@ -37,15 +42,30 @@ body {
     height: 200px;
     overflow: hidden;
     border-radius: 17px;
-    display: flex;
-    align-items: center;
+    border: 2px solid #372C2E;
     width: 100%;
+}
+
+.card__pic:hover h1 {
+    visibility: visible;
+    z-index: 2;
+    position: relative;
+}
+
+.card__pic h1 {
+    position: relative;
+    text-align: center;
+    left: -100%;
+    transform: translatex(140%);
+    color: white;
+    visibility: hidden;
 }
 
 .thumbnail-pics {
     min-height: 200px;
     width: 100%;
     object-fit: cover;
+    align-items: center;
 }
 
 .card__genre {
@@ -61,6 +81,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #DE9E48;
     list-style: none;
+    padding-top: 1em;
 }
 
 .event_date {
@@ -79,6 +100,10 @@ body {
     width: 140px;
     height: 40px;
     padding-top: 10px;
+}
+
+.card__desc:hover {
+    background-color: #b77d32;
 }
 
 .card__body {

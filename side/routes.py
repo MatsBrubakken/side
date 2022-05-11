@@ -137,6 +137,9 @@ def opret_event():
 def omos():
     return render_template("omos.html")
 
+@app.route("/tilkunstneren")
+def tilkunstneren():
+    return render_template("tilkunstneren.html")
 
 @app.route("/event/<int:event_id>")
 def event(event_id):

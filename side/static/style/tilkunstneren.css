@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
+body {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.info {
+    margin: auto;
+    width: 25em;
+    color: #DE9E48;
+    background: rgba(55, 44, 46, 0.85);
+    border: 1px solid #797979;
+    border-radius: 17px;
+    padding: 2em;
+    margin-top: 40px;
+    height: 21em;
+    backdrop-filter: blur(5px);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 24em;
+    padding: 0 15em;
+    padding-top: 5em;
+}
+
+.inventar {
+    margin: auto;
+    width: 25em;
+    color: #DE9E48;
+    background: rgba(55, 44, 46, 0.85);
+    border: 1px solid #797979;
+    border-radius: 17px;
+    padding: 2em;
+    margin-top: 40px;
+    height: 21em;
+    backdrop-filter: blur(5px);
+}
+
+.cirkler {
+    filter: blur(9px);
+}
+
+h5 {
+    color: #F2F2F2;
+    font-size: 23px;
+    padding: 1em;
+    font-weight: 300;
+}
+
+.inventar-liste {
+    color: #F2F2F2;
+    padding: 1em;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: 400;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/tilkunstneren.css') }}" />
+<div class="wrapper">
+    <div class="info">
+        <h2>Til dig som kunstner</h2>
+        <h5 class="txt">AbZalon vil gøre det nemt for kunstnere. Derfor tilbyder vi jer instrumenter, lydanlæg, mikrofoner og mere! Det eneste du skal fokusere på er at have dig selv og dit talent med!</h5>
+    </div>
+    <div class="inventar">
+        <h2>Inventarliste</h2>
+        <ul class="inventar-liste">
+            <li>Akustisk Guitar 2x</li>
+            <li>Trommer 1x</li>
+            <li>Mikrofon 4x</li>
+            <li>Elektrisk Guitar 2x</li>
+            <li>Lyd & Nødvendige kabler</li>
+            <li>Bass</li>
+        </ul>
+    </div>
+</div>
+{%endblock%}

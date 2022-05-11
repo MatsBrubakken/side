@@ -1,4 +1,6 @@
-{% extends "layout.html" %} {% block content %} {% if post.author == current_user %}
+{% extends "layout.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/event.css') }}" /> {% if post.author == current_user %}
+
 <form action="{{ url_for('delete_post', event_id=post.id) }}" method="POST">
     <input type="submit" value="Slet Event" class="delete-event" />
 </form>
@@ -7,22 +9,26 @@
 </form>
 {% endif %}
 <section class="event_container_top">
-    <div class="event_right_container">
-        {% if post.event_picture %}
-        <div class="event_right_container_pic">
-            <img class="event_picture" src="{{ url_for('static', filename='pictures/' + post.event_picture) }}" alt="" />
-        </div>
-        {% endif %}
+    {% if post.event_picture %}
+    <div class="cirkel_orange">
+
+        <img class="event_picture" src="{{ url_for('static', filename='pictures/' + post.event_picture) }}" alt="" />
+        <a href="#"><img class="logo" src="{{ url_for('static',filename='images/u8.svg') }}" alt=""></a>
     </div>
-    <div class="event_left_container">
-        <h2 class="event-title">{{ post.title }}</h2>
-    </div>
+    {% endif %}
 </section>
-<section class="event_container_bottom">
-    <p class="event-content">{{ post.content }}</p>
-</section>
-<div class="knap">
-    <a href="">TEST</a>
+
+
+
+<div class="cirkel_brun">
+    <h2 class="event_title">{{ post.title }}</h2>
+    <p class="cirkel_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid consectetur accusamus dolorem quidem facere nemo atque provident adipisci unde aliquam saepe quod, praesentium natus delectus quibusdam sit odio. Distinctio, sint impedit voluptatum
+        delectus cupiditate aspernatur et tempora commodi ab quos excepturi nisi accusantium atque sapiente nostrum quibusdam laborum. Fuga, a.</p>
+</div>
+
+<div class="cirkel_gul">
+    <a href="{{ ''.join(['http://', post.link]) }}"><img class="logo" src="{{ url_for('static',filename='images/u9.svg') }}" alt=""></a>
+    <a href="{{ ''.join(['http://', post.link]) }}">KØB</a>
 </div>
 
 {% endblock %}

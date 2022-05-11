@@ -30,6 +30,7 @@ class LoginForm(FlaskForm):
 # * Oprettelse af et event
 class EventForm(FlaskForm):
     link = StringField("link", validators=[DataRequired()], render_kw={"placeholder": "YourTicket link"})
+    pris=StringField("Pris")
     event_date = DateField("Dato")
     title = StringField("Overskrift", validators=[DataRequired()], render_kw={"placeholder": "Overskrift"})
     content = TextAreaField("Indhold", validators=[DataRequired()], render_kw={"placeholder": "Indhold"})

@@ -12,25 +12,25 @@
 
 <body>
     <nav class="navbar">
-        <a href="#"><img class="logo" src="{{ url_for('static',filename='images/logo.svg') }}" alt=""></a>
+        <a href="{{ url_for('home') }}"><img class="logo" src="{{ url_for('static',filename='images/logo.svg') }}" alt=""></a>
         <ul class="nav-list">
-            <li class="list-item"><a href="#">Hjem</a></li>
+            <li class="list-item"><a href="/home">Hjem</a></li>
             <li class="list-item"><a href="#">Galleri</a></li>
-            <li class="list-item"><a href="#">Til Kunstneren</a></li>
-            <li class="list-item"><a href="#">Om Os</a></li>
+            <li class="list-item"><a href="/tilkunstneren">Til Kunstneren</a></li>
+            <li class="list-item"><a href="/omos">Om Os</a></li>
             <li class="list-item"><a href="#">Kontakt</a></li>
         </ul>
     </nav>
     <div class="cirkler">
         <div class="cirkel_1">
-            <a href="#"><img class="logo" src="{{ url_for('static',filename='images/u7.svg') }}" alt=""></a>
+            <a href="#"><img class="layoutcirkel" src="{{ url_for('static',filename='images/u7.svg') }}" alt=""></a>
         </div>
 
         <div class="cirkel_2">
-            <a href="#"><img class="logo" src="{{ url_for('static',filename='images/u8.svg') }}" alt=""></a>
+            <a href="#"><img class="layoutcirkel" src="{{ url_for('static',filename='images/u8.svg') }}" alt=""></a>
         </div>
         <div class="cirkel_3">
-            <a href="#"><img class="logo" src="{{ url_for('static',filename='images/u9.svg') }}" alt=""></a>
+            <a href="#"><img class="layoutcirkel" src="{{ url_for('static',filename='images/u9.svg') }}" alt=""></a>
         </div>
     </div>
     <!----
@@ -83,6 +83,13 @@
       });
     </script>
     --->
+    <div class="socials">
+        <p>Find os her:</p>
+        <a href="https://www.instagram.com/abzalonevent9000/">
+            <img src="{{url_for('static',filename='images/instagram-svgrepo-com.svg')}}" alt="" class="insta_svg"></a>
+        <a href="https://www.facebook.com/AbZalon-Event-Factory-101134845210570">
+            <img src="{{url_for('static',filename='images/facebook-svgrepo-com.svg')}}" alt="" class="face_svg"></a>
+    </div>
     {%block content%} {%endblock%}
 
 </body>

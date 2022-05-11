@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,16 +8,16 @@
 body {
     background-color: #372C2E;
     font-family: 'Source Sans Pro', sans-serif;
+    max-width: 100%;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: 2vh;
     font-family: 'Source Sans Pro', sans-serif;
     height: 120px;
-    padding-left: 5rem;
     border-bottom: 2px solid white;
     margin: 0 3em;
 }
@@ -35,6 +34,7 @@ body {
 
 .navbar a {
     text-decoration: none;
+    letter-spacing: 3px;
     color: #DE9E48;
 }
 
@@ -44,24 +44,25 @@ body {
 
 .logo {
     height: fit-content;
-    width: 15em;
+    width: 25em;
 }
 
 .cirkler {
     border-width: 0px;
     position: absolute;
-    left: -150px;
-    top: -150px;
-    width: 0px;
-    height: 0px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 130%;
     z-index: -2;
+    overflow: hidden;
 }
 
 .cirkel_1 {
     border-width: 0px;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: -120px;
+    top: -120px;
     width: 642px;
     height: 642px;
     display: flex;
@@ -79,8 +80,8 @@ body {
 .cirkel_2 {
     border-width: 0px;
     position: absolute;
-    left: 987px;
-    top: 368px;
+    left: 130vh;
+    top: 20vh;
     width: 642px;
     height: 642px;
     display: flex;
@@ -98,8 +99,8 @@ body {
 .cirkel_3 {
     border-width: 0px;
     position: absolute;
-    left: 353px;
-    top: 849px;
+    left: 40vh;
+    top: 60vh;
     width: 642px;
     height: 642px;
     display: flex;
@@ -113,3 +114,31 @@ body {
     width: 642px;
     height: 642px;
 }
+
+.socials {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+    left: 70%;
+    top: 90%;
+    color: #715720;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+}
+
+.socials img {
+    height: 4vh;
+    filter: invert(30%) sepia(74%) saturate(415%) hue-rotate(3deg) brightness(96%) contrast(89%);
+}
+
+.socials p {
+    font-size: 2vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* ---- EVENT ---*/
