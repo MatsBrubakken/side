@@ -1,6 +1,13 @@
 {% extends "layout.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/logind.css') }}" />
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
 
 <form action="" method="POST">
-  {{form.hidden_tag()}} {{form.username}} {{form.password}} {{form.submit}}
+    {{form.hidden_tag()}} {{form.username (class="username")}} {{form.password (class="password")}} {{form.submit (class="submit")}}
 </form>
 {% endblock content %}
