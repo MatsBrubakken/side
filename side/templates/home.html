@@ -7,11 +7,14 @@
 
             <div class="card__pic">
                 <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}" alt="" />
+                <!-- Tager det ønskede billede fra mappen "pictures" -->
             </div>
 
             <h2 class="card__title">{{post.title}}</h2>
+            <!--Indsætter titel dataet fra databasetabellen ind -->
             <h2 class="event_date">{{post.event_date.strftime('%d-%m-%Y')}}</h2>
-            <div class="lorteknap">
+            <!--Indsætter dato dataet fra databasetabellen ind -->
+            <div class="knap">
                 <p class="card__desc">LÆS MERE</p>
             </div>
 

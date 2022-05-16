@@ -5,23 +5,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <div class="wrapper">
     <h1 class="title">Opret Begivenhed</h1>
+    <!-- Titel på formularen -->
     <form action="" method="POST" enctype="multipart/form-data" class="opret-event">
         {{form.hidden_tag()}}
+        <!-- Gør at alle elementer kan bruges sammen -->
         <div class="venstre_side">
             <p>Overskrift:</p>
             {{form.title(class="inputter")}}
+            <!-- Input feltet "titel" fra formen "EventForm()" -->
             <p>Dato:</p>
             {{form.event_date(class="inputter")}}
+            <!-- Input feltet "dato" fra formen "EventForm()" -->
             <p>Beskrivelse:</p>
             {{form.content(class="inputtercont")}}
+            <!-- Input feltet "content" fra formen "EventForm()" -->
         </div>
         <div class="hojre_side">
             <p>Your Ticket Link:</p>
             {{form.link(class="inputter")}}
+            <!-- Input feltet "link" fra formen "EventForm()" -->
             <p>Pris:</p>
             {{form.pris(class="inputter")}}
+            <!-- Input feltet "pris" fra formen "EventForm()" -->
             <label class="thumbnail" id="topthumb">Forside Billede{{form.thumbnail(class="billedeinp")}}</label>
+            <!-- Input feltet "thumbnail" fra formen "EventForm()" -->
             <label class="thumbnail">Begivenhed Billede{{form.event_picture(class="billedeinp")}}</label> {{form.submit(class="opret_event_submit")}}
+            <!-- Input feltet "event_picture" fra formen "EventForm()" -->
         </div>
     </form>
 </div>

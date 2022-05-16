@@ -141,6 +141,7 @@ body {
     width: 150px;
     height: 150px;
     -webkit-animation: grow 2s 1;
+    filter: invert(58%) sepia(69%) saturate(1194%) hue-rotate(360deg) brightness(102%) contrast(104%);
 }
 
 .socials {
