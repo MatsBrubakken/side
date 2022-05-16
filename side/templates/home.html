@@ -1,7 +1,7 @@
 {%extends "layout.html"%} {%block content%}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/home.css') }}" />
 <div class="wrapper">
-    {% for post in posts.items %}
+    {% for post in posts %}
     <a href="{{ url_for('event', event_id=post.id) }}">
         <div class="card">
             {% if post.thumbnail %}
