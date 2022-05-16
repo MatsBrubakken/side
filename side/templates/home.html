@@ -1,10 +1,9 @@
 {%extends "layout.html"%} {%block content%}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/home.css') }}" />
 <div class="wrapper">
-    {% for post in posts %}
+    {% for post in post.items %}
     <a href="{{ url_for('event', event_id=post.id) }}">
         <div class="card">
-            {% if post.thumbnail %}
             <div class="card__pic">
                 <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}" alt="" />
                 <!-- Tager det ønskede billede fra mappen "pictures" -->
@@ -18,22 +17,12 @@
                 <p class="card__desc">LÆS MERE</p>
                 <!--Statisk knap element-->
             </div>
-            {% else %}
-            <div class="card_content">
-                <div class="card__body">
-                    <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}" alt="" />
-                    <h2 class="card__title">{{post.title}}</h2>
-                    <p class="card__desc">{{post.content}}</p>
-                </div>
-            </div>
         </div>
     </a>
-
-
     {% endfor %}
 </div>
 <div class="side_tal">
-    {% for page in posts.iter_pages() %} {% if page %} {% if page != posts.page %}
+    {% for page in post.iter_pages() %} {% if page %} {% if page != post.page %}
     <a href="{{ url_for('home', page=page) }}" tabindex="-1">
         <p>{{page}}</p>
     </a> {% else %}

@@ -18,9 +18,9 @@ def home():
     """Viser hovedsiden med alle posts fra DB"""
     page = request.args.get('page', 1, type=int)
     # Gemmer alle posts fra database i rækkefølgen de blev postet i posts variabel
-    posts = Post.query.order_by(Post.event_date.asc()).paginate(per_page=6,page=page)
+    post = Post.query.order_by(Post.event_date.asc()).paginate(per_page=6,page=page)
     # Sender posts variablen ind i HTML filen home.html, sådan at den kan bruges der.
-    return render_template("home.html",title="Hjem", posts=posts)
+    return render_template("home.html",title="Hjem", post=post)
 
 
 # Route til at oprette bruger. GET OG POST method fordi de skal loade hjemmesiden og kunne oprette
