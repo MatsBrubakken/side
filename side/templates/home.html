@@ -4,7 +4,7 @@
     {% for post in posts.items %}
     <a href="{{ url_for('event', event_id=post.id) }}">
         <div class="card">
-
+            {% if post.thumbnail %}
             <div class="card__pic">
                 <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}" alt="" />
                 <!-- Tager det ønskede billede fra mappen "pictures" -->
@@ -16,9 +16,16 @@
             <!--Indsætter dato dataet fra databasetabellen ind -->
             <div class="knap">
                 <p class="card__desc">LÆS MERE</p>
+                <!--Statisk knap element-->
             </div>
-
-
+            {% else %}
+            <div class="card_content">
+                <div class="card__body">
+                    <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + 'default.jpg') }}" alt="" />
+                    <h2 class="card__title">{{post.title}}</h2>
+                    <p class="card__desc">{{post.content}}</p>
+                </div>
+            </div>
         </div>
     </a>
 
