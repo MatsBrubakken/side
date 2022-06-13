@@ -50,20 +50,20 @@ body {
     text-align: center;
 }
 
-.info-shit {
+.info-box {
     display: flex;
     flex-direction: column;
     width: 30%;
     align-items: flex-end;
 }
 
-.info-shit p {
+.info-box p {
     color: #DE9E48;
     font-weight: 300;
     font-size: 20px;
 }
 
-.info-shit h2 {
+.info-box h2 {
     text-align: center;
     color: #DE9E48;
     font-weight: 600;
